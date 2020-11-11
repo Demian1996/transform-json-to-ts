@@ -7,8 +7,9 @@ import { useDebounce } from 'use-debounce';
 import { parse } from './lib/utils';
 
 const defaultTemplate = `{
-  "name": "xiaoming",
-  "age": 24,
+  /** 测试注释过滤 */
+  "name": "xiaoming", // 测试注释过滤
+  "age": 24,/** 测试注释过滤 */
   "interests": [
     {
       "type": "play game",
@@ -16,7 +17,8 @@ const defaultTemplate = `{
     },
     {
       "type": "read",
-      "desc": "读书"
+      // 测试注释过滤
+      "desc": "读书"// 测试注释过滤
     }
   ]
 }
