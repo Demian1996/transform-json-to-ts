@@ -5,3 +5,4 @@ run
 **/*/.DS_Store
 dist
 *.lock
+*.log
