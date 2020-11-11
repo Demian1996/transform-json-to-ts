@@ -6,8 +6,24 @@ import Output from './components/Output';
 import { useDebounce } from 'use-debounce';
 import { parse } from './lib/utils';
 
+const defaultTemplate = `{
+  "name": "xiaoming",
+  "age": 24,
+  "interests": [
+    {
+      "type": "play game",
+      "desc": "玩游戏"
+    },
+    {
+      "type": "read",
+      "desc": "读书"
+    }
+  ]
+}
+`;
+
 function App() {
-  const [jsonStr, setJsonStr] = useState('');
+  const [jsonStr, setJsonStr] = useState(defaultTemplate);
   const [error, setError] = useState<Error>();
 
   const onChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
