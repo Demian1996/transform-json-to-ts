@@ -7,11 +7,14 @@
     "babel-plugin-react-css-modules": "^5.2.6",
     "cheerio": "^1.0.0-rc.3",
     "classnames": "^2.2.6",
+    "json2ts": "^0.0.7",
     "koa": "^2.13.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "strip-json-comments": "^3.1.1",
     "superagent": "^6.1.0",
-    "ts-node": "^9.0.0"
+    "ts-node": "^9.0.0",
+    "use-debounce": "^5.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
