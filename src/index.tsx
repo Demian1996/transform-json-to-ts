@@ -1,19 +1,14 @@
 import React, { useEffect, useMemo } from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from 'antd';
 import './index.less';
+import Textarea from './components/Textarea';
+import Output from './components/Output';
 
 function App() {
   return (
     <div styleName="container">
-      <h1>Hello world!</h1>
-      <Button
-        onClick={() => {
-          window.open('https://github.com/SugarTurboS');
-        }}
-      >
-        开启财富密码
-      </Button>
+      <Textarea jsonStr="123" styleName="left" />
+      <Output jsonStr="{name: string}" styleName="right" />
     </div>
   );
 }
