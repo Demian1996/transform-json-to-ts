@@ -36,7 +36,10 @@ const parse = (str: string) => {
   if (typeof checkJsonRes !== 'boolean' && typeof checkJsonWithCommentsRes !== 'boolean') {
     return typeof checkJsonRes !== 'boolean' ? checkJsonRes : checkJsonWithCommentsRes;
   }
-  return new Json2Ts().convert(stripJsonComments(str));
+  // 先去除注释，再转为ts类型
+  const transformedStr = new Json2Ts().convert(stripJsonComments(str));
+  console.log(transformedStr);
+  return transformedStr;
 };
 
 export { parse };
