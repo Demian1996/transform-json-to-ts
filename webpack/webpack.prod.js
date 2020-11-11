@@ -9,7 +9,7 @@ module.exports = merge(common, {
     app: path.resolve(__dirname, '../src/index.tsx'),
   },
   output: {
-    filename: 'index.js',
+    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, '../dist'),
   },
   devtool: false,
