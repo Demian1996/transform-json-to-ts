@@ -8,8 +8,7 @@ const isJson = (str: string) => {
   try {
     JSON.parse(str);
   } catch (error) {
-    console.log(error);
-    return false;
+    return new Error(error);
   }
   return true;
 };
@@ -23,8 +22,7 @@ const isJsonWithComments = (str: string) => {
   try {
     JSON.parse(stripJsonComments(str));
   } catch (error) {
-    console.log(error);
-    return false;
+    return new Error(error);
   }
   return true;
 };
@@ -33,8 +31,10 @@ const parse = (str: string) => {
   if (!str) {
     return str;
   }
-  if (!isJson(str) && !isJsonWithComments(str)) {
-    return str;
+  const checkJsonRes = isJson(str);
+  const checkJsonWithCommentsRes = isJsonWithComments(str);
+  if (typeof checkJsonRes !== 'boolean' && typeof checkJsonWithCommentsRes !== 'boolean') {
+    return typeof checkJsonRes !== 'boolean' ? checkJsonRes : checkJsonWithCommentsRes;
   }
   return new Json2Ts().convert(stripJsonComments(str));
 };
